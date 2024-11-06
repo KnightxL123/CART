@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/payment.css">
+</head>
+<body class="bg-body-tertiary">
+    <!-- HEADER -->
+    <div class="container">
+      <main>
+          <div class="py-4 text-center" id="header">
+              <!-- Logo and Links -->
+              <a class="navbar-brand d-flex align-items-center" href="#">
+                  <img src="img/logo.png" alt="Interllux Logo" width="75" height="70">
+                  <span class="ms-2">Interllux</span>
+              </a>    
+          </div>
+  
+          <div class="row g-3">
+              <!-- BILLING FORM (LEFT) -->
+              <div class="col-md-7 col-lg-8">
+                  <h4 class="mb-3">Delivery</h4>
+                  <form class="needs-validation" novalidate="">
+                      <div class="row g-3">
+                          <div class="col-sm-6">
+                              <label for="firstName" class="form-label">First name</label>
+                              <input type="text" class="form-control" id="firstName" required="">
+                              <div class="invalid-feedback">Valid first name is required.</div>
+                          </div>
+  
+                          <div class="col-sm-6">
+                              <label for="lastName" class="form-label">Last name</label>
+                              <input type="text" class="form-control" id="lastName" required="">
+                              <div class="invalid-feedback">Valid last name is required.</div>
+                          </div>
+  
+                          <div class="col-12">
+                              <label for="email" class="form-label">Email</label>
+                              <input type="email" class="form-control" id="email" placeholder="Email">
+                              <div class="invalid-feedback">Please enter a valid email address for shipping updates.</div>
+                          </div>
+  
+                          <div class="col-12">
+                              <label for="address" class="form-label">Address</label>
+                              <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
+                              <div class="invalid-feedback">Please enter your shipping address.</div>
+                          </div>
+  
+                          <div class="col-md-6">
+                              <label for="barangay" class="form-label">Barangay</label>
+                              <input type="text" class="form-control" id="barangay" placeholder="" required="">
+                              <div class="invalid-feedback">Please enter your barangay.</div>
+                          </div>
+  
+                          <div class="col-md-6">
+                              <label for="city" class="form-label">City</label>
+                              <select id="city" class="form-select" aria-label="City" onchange="populateBarangayDropdown()">
+                                  <option value="">Select City...</option>
+                              </select>
+                          </div>
+  
+                          <div class="col-md-4">
+                              <label for="region" class="form-label">Region</label>
+                              <select id="region" class="form-select" aria-label="Region" onchange="populateCityDropdown()">
+                                  <option value="">Select Region...</option>
+                              </select>
+                          </div>
+  
+                          <div class="col-md-4">
+                            <label for="region" class="form-label">Country</label>
+                            <select id="region" class="form-select" aria-label="Country">
+                                <option value="">Select Region...</option>
+                                <option value="">Philippines</option>
+                            </select>
+                        </div>
+                          <div class="col-md-4 position-relative">
+                              <label for="zip" class="form-label">Zip</label>
+                              <input type="text" class="form-control" id="zip" required="">
+                              <div class="invalid-tooltip">Please provide a valid zip.</div>
+                          </div>
+                      </div>
+  
+                      <hr class="my-4">
+  
+                      <h4 class="mb-3">Payment</h4>
+                      <p>All transactions are secure and encrypted.</p>
+                      <div class="my-3">
+                          <div class="form-check">
+                              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">
+                              <label class="form-check-label" for="online-banking">Online Banking</label>
+                          </div>
+                          <div class="form-check">
+                              <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required="">
+                              <label class="form-check-label" for="e-wallet">E-wallet</label>
+                          </div>
+                      </div>
+  
+                      <hr class="my-4">
+
+                      <div class="checkout">
+                          <button class="btn btn-primary btn-lg checkout-button" type="submit">Continue to checkout</button>
+                      </div>
+                  </form>
+              </div>
+  
+              <!-- CART ITEMS SECTION (RIGHT) -->
+              <div class="col-md-5 col-lg-4 cart-right">
+                <div id="cart-items">
+                  <div class="cart-item">
+                    <div class="d-flex">
+                      <img src="img/product.jpg" alt="Product Image" class="img-fluid">
+                      <p class="item-name">Birkin 30 Graphite Matte Alligator in Gold Hardware Stamp X</p>
+                    </div>
+                    <div class="item-quantity">
+                      <button class="qty-btn" id="decrease">-</button>
+                      <span id="quantity">1</span>
+                      <button class="qty-btn" id="increase">+</button>
+                    </div>
+                  </div>                    
+                  <div class="item-details">
+                    <div class="total-container mt-3">
+                      <div>
+                        <p>Subtotal</p>
+                        <p id="subtotal">₱2,900,000.00</p> <!-- Updated to have an ID -->
+                      </div>
+                      <div>
+                        <p>Shipping</p>
+                        <p>Enter shipping address</p>
+                      </div>
+                      <div class="total">
+                        <h4>TOTAL</h4>
+                        <h4 id="total">₱2,900,000.00</h4> <!-- Updated to have an ID -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              </div>
+          </div>
+      </main>
+  </div>
+    <!-- Footer -->
+    
+<footer>
+  <div class="footer-container">
+      <!-- Left Side -->
+      <div class="footer-left">
+          <h4>Contact Us</h4>
+          <p><a href="https://wa.me/639161195710" target="_blank">Chat via WhatsApp</a></p>
+          <p>Interllux WhatsApp Link</p>
+          <p>WhatsApp #: +639161195710</p>
+          <div class="social-icons">
+              <a href="https://www.facebook.com/yourpage" target="_blank">
+                  <img src="img/1.png" alt="Facebook" width="30">
+              </a>
+              <a href="https://www.instagram.com/yourpage" target="_blank">
+                  <img src="img/2.png" alt="Instagram" width="30">
+              </a>
+              <a href="https://www.tiktok.com/@yourpage" target="_blank">
+                  <img src="img/3.png" alt="TikTok" width="30">
+              </a>
+              <a href="https://wa.me/639161195710" target="_blank">
+                  <img src="img/4.png" alt="WhatsApp" width="30">
+              </a>
+          </div>
+      </div>
+
+      <!-- Middle Part -->
+      <div class="footer-middle">
+          <h4>Interllux</h4>
+          <p>Phone: +639161195710</p>
+      </div>
+
+      <!-- Right Side -->
+      <div class="footer-right footer-information">
+          <h4>Information</h4>
+          <ul>
+              <li><a href="about-us.html">About Us</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+              <li><a href="contact-us.html">Contact Us</a></li>
+              <li><a href="terms-and-conditions.html">Terms and Condition</a></li>
+              <li><a href="return-and-cancellation.html">Return and Cancellation</a></li>
+              <li><a href="privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="terms-of-service.html">Terms of Service</a></li>
+              <li><a href="refund-policy.html">Refund Policy</a></li>
+          </ul>
+      </div>
+  </div>
+</footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>

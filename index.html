@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Checkout Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <!-- Logo and Brand Name -->
+        <div class="brand">
+            <a href="index.html">
+            <img src="img/logo.png" alt="Brand Logo" class="logo"> <!-- Replace with actual logo file path -->
+            <span class="brand-name">Interllux</span>
+        </a>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="nav-left">
+            <a href="#designer-brands">Designer Brands</a>
+            <a href="#catalog">Catalog</a>
+            <a href="#installment">Installment or Layaway</a>
+            <a href="#sell">Sell with Us</a>
+            <a href="#customer-care">Customer Care</a>
+            
+        </nav>
+
+        <!-- Icons on the Right -->
+        <div class="nav-right">
+            <a href="#profile" class="icon"><i class="fas fa-user"></i></a>
+            <a href="#search" class="icon"><i class="fas fa-search"></i></a>
+            <a id="shopping-bag-icon" href="#" class="icon"><i class="fas fa-shopping-bag"></i></a>
+        </div>
+    </header>
+
+    <div class="product-container">
+        <div class="product-image">
+            <!-- Main Product Image -->
+            <img id="main-product-image" src="img/product1.jpg" alt="Product Image">
+            <!-- Thumbnails for additional images -->
+            <div class="thumbnail-container">
+                <img src="img/product1.jpg" alt="Thumbnail 1" class="thumbnail" onclick="changeMainImage('img/product1.jpg')">
+                <img src="img/product2.jpg" alt="Thumbnail 2" class="thumbnail" onclick="changeMainImage('img/product2.jpg')">
+                <img src="img/product3.jpg" alt="Thumbnail 3" class="thumbnail" onclick="changeMainImage('img/product3.jpg')">
+                <img src="img/product1.jpg" alt="Thumbnail 1" class="thumbnail" onclick="changeMainImage('img/product1.jpg')">
+                <img src="img/product2.jpg" alt="Thumbnail 2" class="thumbnail" onclick="changeMainImage('img/product2.jpg')">
+                <img src="img/product3.jpg" alt="Thumbnail 3" class="thumbnail" onclick="changeMainImage('img/product3.jpg')">
+                <img src="img/product1.jpg" alt="Thumbnail 1" class="thumbnail" onclick="changeMainImage('img/product1.jpg')">
+                <img src="img/product2.jpg" alt="Thumbnail 2" class="thumbnail" onclick="changeMainImage('img/product2.jpg')">
+                <img src="img/product3.jpg" alt="Thumbnail 3" class="thumbnail" onclick="changeMainImage('img/product3.jpg')">
+                <img src="img/product1.jpg" alt="Thumbnail 1" class="thumbnail" onclick="changeMainImage('img/product1.jpg')">
+                <img src="img/product2.jpg" alt="Thumbnail 2" class="thumbnail" onclick="changeMainImage('img/product2.jpg')">
+                <img src="img/product3.jpg" alt="Thumbnail 3" class="thumbnail" onclick="changeMainImage('img/product3.jpg')">
+                <!-- Add more thumbnails as needed -->
+            </div>
+        </div>
+        <div class="product-info">
+            <h1 class="brand-name">Hermes</h1>
+            <h2 class="product-name">
+                Birkin 30 Graphite Matte<br>
+                Alligator in Gold Hardware Stamp X
+            </h2>
+            <p class="product-price">₱ 2,900,000.00</p>
+            <hr><!-- Horizontal line to break the layout -->
+            <div class="product-description">
+                <h3>Product Details<br><br></h3>
+                <p>
+                    Birkin 30 Graphite Matte Alligator in Gold Hardware Stamp X <br><br>
+
+                    ✨Php 2,900,000<br>
+
+                    *Additional 4% for straight credit card payments<br><br><br>
+
+                    *Available for 6 months layaway with 1% interest per month<br><br><br>
+
+                    *BDO credit card up to 36 mos & Citibank credit card up to 24 mos (with interest)<br><br><br>
+
+                    CONDITION: Good as New (plastic protector on the hardware intact)<br><br><br>
+
+                    RATING: 10/10<br><br>
+
+                    INCLUSIONS: dust bag, lock & keys, box, care booklet, rain coat, copy of store receipt and CITES<br><br><br>
+
+                    💯% Authenticity Money back guarantee<br><br><br>
+
+                    Free shipping within Metro Manila
+                    Additional shipping charges for provincial deliveries<br><br><br>
+
+                    As all sales are final, buyers are advised to review all photos and conditions prior to purchase.<br><br><br>
+
+                    Disclaimer: Purse Maison is not affiliated with the brands featured. All trademarks and copyrights remains sole property to the brands.
+                </p>
+            </div>
+            <div class="action-section">
+                <button class="addtocart-button" data-product-id="hermes-birkin">ADD TO CART</button>
+                <!-- Help Section -->
+                <div class="help-section">
+                    <h5>Need Help?</h5>
+                    <br>
+                    <p>Chat via WhatsApp: <a href="tel:+639616195710">+639616195710</a></p><br>
+                    <p>WhatsApp: <a href="https://wa.me/639616195710" target="_blank">Interllux WhatsApp Link</a></p>
+                    <p>BGC Showroom (by appointment)<br>
+                       Purse Maison<br><br>
+                       Avida city flex, SOHO tower (beside tower 1), BGC,<br><br>
+                       1635 Taguig City,<br>
+                       Philippines
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Off-canvas Cart Panel -->
+<div id="cart-panel" class="cart-panel">
+    <div class="cart-header">
+        <h2>Cart</h2>
+        <button id="close-cart-panel" class="close-btn">x</button>
+    </div>
+    <hr>
+    <div id="cart-items">
+        <!-- Example Cart Item -->
+        <div class="cart-item">
+            <img src="img/product1.jpg" alt="Product Image">
+            <div class="item-details">
+                <p class="item-name">Birkin 30 Graphite Matte
+                    Alligator in Gold Hardware Stamp X</p>
+                    <p class="item-price" id="subtotal">₱2,900,000.00</p>
+                    <div class="item-quantity">
+                        <button class="qty-btn" id="decrease">-</button>
+                        <span id="quantity">1</span>
+                        <button class="qty-btn" id="increase">+</button>
+                </div>
+                <a href="#" class="remove-item">Remove</a>
+            </div>
+        </div>
+    </div>
+    <button id="checkout-button"><a href="payment.html" class="checkout" >Checkout • <p id="total">₱2,900,000.00</p></a></button>
+</div>
+
+
+
+
+<footer>
+    <div class="footer-container">
+        <!-- Left Side -->
+        <div class="footer-left">
+            <h4>Contact Us</h4>
+            <p><a href="https://wa.me/639161195710" target="_blank">Chat via WhatsApp</a></p>
+            <p>Interllux WhatsApp Link</p>
+            <p>WhatsApp #: +639161195710</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/yourpage" target="_blank">
+                    <img src="img/1.png" alt="Facebook" width="30">
+                </a>
+                <a href="https://www.instagram.com/yourpage" target="_blank">
+                    <img src="img/2.png" alt="Instagram" width="30">
+                </a>
+                <a href="https://www.tiktok.com/@yourpage" target="_blank">
+                    <img src="img/3.png" alt="TikTok" width="30">
+                </a>
+                <a href="https://wa.me/639161195710" target="_blank">
+                    <img src="img/4.png" alt="WhatsApp" width="30">
+                </a>
+            </div>
+        </div>
+
+        <!-- Middle Part -->
+        <div class="footer-middle">
+            <h4>Interllux</h4>
+            <p>Phone: +639161195710</p>
+        </div>
+
+        <!-- Right Side -->
+        <div class="footer-right footer-information">
+            <h4>Information</h4>
+            <ul>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+                <li><a href="terms-and-conditions.html">Terms and Condition</a></li>
+                <li><a href="return-and-cancellation.html">Return and Cancellation</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms-of-service.html">Terms of Service</a></li>
+                <li><a href="refund-policy.html">Refund Policy</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
